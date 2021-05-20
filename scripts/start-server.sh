@@ -44,7 +44,7 @@ elif [ "${CUR_V##*v}" != "$LAT_V" ]; then
 	tar -C ${DATA_DIR}/Dogecoin --strip-components=1 -xf Dogecoin-Core-${LAT_V}.tar.gz
 	rm -R ${DATA_DIR}/Dogecoin-Core-${LAT_V}.tar.gz
 elif [ "${CUR_V##*v}" == "$LAT_V" ]; then
-	echo "---Dogecoin-Core v$CUR_V up-to-date---"
+	echo "---Dogecoin-Core $CUR_V up-to-date---"
 fi
 
 echo "---Preparing Server---"
