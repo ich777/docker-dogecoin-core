@@ -24,8 +24,8 @@ chmod -R 750 /opt/scripts
 chown -R ${UID}:${GID} ${DATA_DIR}
 
 term_handler() {
-	kill -SIGTERM "$(pidof electrum)"
-	tail --pid="$(pidof electrum)" -f 2>/dev/null
+	kill -SIGTERM "$(pidof dogecoin-qt)"
+	tail --pid="$(pidof dogecoin-qt)" -f 2>/dev/null
 	exit 143;
 }
 
