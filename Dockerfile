@@ -2,7 +2,9 @@ FROM ich777/novnc-baseimage
 
 LABEL maintainer="admin@minenet.at"
 
-RUN export TZ=Europe/Rome && \
+RUN apt-get update && \
+	apt-get -y install libxkbcommon-x11-0 && \
+	export TZ=Europe/Rome && \
 	sed -i '/    document.title =/c\    document.title = "Dogecoin-Core - noVNC";' /usr/share/novnc/app/ui.js && \
 	rm /usr/share/novnc/app/images/icons/*
 
