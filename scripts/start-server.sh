@@ -3,7 +3,7 @@ export DISPLAY=:99
 export XDG_RUNTIME_DIR=/tmp/runtime-dogecoin
 export XAUTHORITY=${DATA_DIR}/.Xauthority
 
-CUR_V="$(LD_LIBRARY=${DATA_DIR}/Dogecoin/lib ${DATA_DIR}/Dogecoin/bin/dogecoin-cli --version 2>/dev/null | grep "Dogecoin Core RPC client version v" | awk '{print $6}')"
+CUR_V="$(LD_LIBRARY=${DATA_DIR}/Dogecoin/lib ${DATA_DIR}/Dogecoin/bin/dogecoin-cli --version 2>/dev/null | grep "Dogecoin Core RPC client version v" | awk '{print $6}' | cut -d '-' -f1)"
 LAT_V="$(wget -qO- https://github.com/ich777/versions/raw/master/Dogecoin | grep LATEST | cut -d '=' -f2)"
 
 if [ -z "$LAT_V" ]; then
