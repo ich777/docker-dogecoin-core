@@ -1,6 +1,7 @@
 FROM ich777/novnc-baseimage
 
-LABEL maintainer="admin@minenet.at"
+LABEL org.opencontainers.image.authors="admin@minenet.at"
+LABEL org.opencontainers.image.source="https://github.com/ich777/docker-dogecoin-core"
 
 RUN apt-get update && \
 	apt-get -y install libxkbcommon-x11-0 && \
